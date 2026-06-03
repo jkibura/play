@@ -3,7 +3,18 @@ import '../projo-styles/Checkbox.css'
 
 const Checkbox = () => {
   return (
-    <div className='checkbox-page'>
+    <div className='checkbox-page projo'>
+        <Box />
+        <Box />
+        <Box />
+    </div>
+  )
+}
+
+export default Checkbox
+
+const Box = () => {
+    return (
         <div className="checkboxes">
             <label>
                 <input 
@@ -19,8 +30,6 @@ const Checkbox = () => {
                 type="checkbox" /> <span>Checkbox 3</span>
             </label>
         </div>
-    </div>
-  )
+    )
 }
 
-export default Checkbox

@@ -84,7 +84,7 @@ const Carousl = () => {
   }, [items.length])
 
   return (
-    <div className="carousl-page">
+    <div className="carousl-page projo">
       <div className="carousl-header">
         <h2>Carousl</h2>
       </div>

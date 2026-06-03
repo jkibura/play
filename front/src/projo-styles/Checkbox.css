@@ -1,9 +1,11 @@
 .checkbox-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(max(200px, calc((80% - 2rem) / 3)), 1fr)
+    );
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .checkboxes {

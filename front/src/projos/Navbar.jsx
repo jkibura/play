@@ -1,33 +1,40 @@
-import { NavLink } from 'react-router-dom'
 import '../projo-styles/Navbar.css'
+import MenuIcon from '@mui/icons-material/Menu';
+import { useSidebar } from '../context/SidebarContext';
 
-const linkClass = ({ isActive }) =>
-  ['navbar__link', isActive && 'navbar__link--active'].filter(Boolean).join(' ')
+function Navbar() {
+  const { toggleSidebar } = useSidebar();
 
-const Navbar = () => {
-  return (
-    <header className="navbar">
-      <nav className="navbar__inner" aria-label="Primary">
-        <ul className="navbar__list">
-          <li className="navbar__item navbar__item--lead">
-            <NavLink to="/" className={linkClass} end>
-              Home
-            </NavLink>
-          </li>
-          <li className="navbar__item">
-            <NavLink to="/checkbox" className={linkClass}>
-              Checkbox
-            </NavLink>
-          </li>
-          <li className="navbar__item">
-            <NavLink to="/carousl" className={linkClass}>
-              Carousel
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  )
+    return (
+        <nav>
+          <div className="nav-header">
+            <MenuIcon className='menu' onClick={toggleSidebar}/>
+            <div className="logo">Play</div>
+          </div>
+
+          <ul className="nav-links">
+            
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+              
+            
+          </ul>
+
+          <div className="buttons">
+            <button className='btn'>Login</button>
+          </div>
+        </nav>
+    )
 }
 
 export default Navbar
